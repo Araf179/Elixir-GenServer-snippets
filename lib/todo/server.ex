@@ -20,7 +20,7 @@ defmodule Todo.Server do
 
   @impl GenServer
   def handle_cast({:add_entry, new_entry}, todo_list) do
-    IO.inspect(todo_list)
+    IO.inspect(todo_list, label: "Todo List")
     new_state = Todo.List.add_entry(todo_list, new_entry)
     {:noreply, new_state}
   end
